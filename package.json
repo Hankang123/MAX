@@ -1,0 +1,23 @@
+{
+  "name": "app-bb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hankang123/MAX.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hankang123/MAX/issues"
+  },
+  "homepage": "https://github.com/Hankang123/MAX#readme",
+  "dependencies": {
+    "uni-app-fetch": "^0.0.3"
+  }
+}

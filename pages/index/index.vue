@@ -1,27 +1,32 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
-			<text class="title">{{title}}</text>
+			<text class="le">账号登录</text>
+			<text class="rg">手机号登录</text>
 		</view>
+		<view class="con">
+			<view class="top">
+				<input type="text" />
+			</view>
+			<view class="bot">
+				<input type="text" />
+			</view>
+		</view>
+		<button class="btn" @click="add">登录</button>
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
-		}
-	}
-</script>
+<script setup lang="ts">
+	import {login} from '@/api/login'
+const add = async () =>{
+	const res = await login({
+	account: 'xbsj001',
+	password: '123456',
+	data: undefined
+})
+console.log('res',res);
+}
+</script>                                                                        
 
 <style>
 	.content {
@@ -31,22 +36,48 @@
 		justify-content: center;
 	}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
 
 	.text-area {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 20px;
+		height: 70px;
+		line-height: 30px;
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 	}
 
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+	.btn{
+		width: 80%;
+		height: 50px;
+		border-radius: 100px 100px 100px 100px;
+		background-color: #EE4F3E;
+		color: #fff;
+		margin-top: 30px;
+	}
+	
+	.le{
+		font-size: 25px;
+	}
+	.rg{
+		color: #EE4F3E;
+	}
+	.con{
+		width: 100%;
+		height: 100px;
+		
+	}
+	.top{
+		width: 90%;
+		border-bottom: 1px solid #ccc;
+		margin-left: 5%;
+	}.bot{
+		width: 90%;
+		border-bottom: 1px solid #ccc;
+		margin-left: 5%;
+	}
+	input{
+		/* border: 1px solid black; */
+		height: 50px;
 	}
 </style>
